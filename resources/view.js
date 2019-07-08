@@ -42,9 +42,9 @@ olympicView.prototype.renderBtn = function(mydata) {
     for (let i = 0; i < this.mydata.length; i++) {
         let btn = document.createElement("button")
         btn.innerText = mydata[i].year;
-        btn.classList += " btn btn-primary m-5 ";
+        btn.classList += " btn btn-primary mx-2 my-2 ";
         btn.addEventListener("click", this.onClick);
-        console.log(this.onClick);
+
 
         this.targetbtn.appendChild(btn);
 
