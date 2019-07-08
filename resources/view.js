@@ -18,11 +18,16 @@ olympicView.prototype.render = function render(year, data) {
             title.classList += " my-5"
             var txtnode = document.createTextNode(data[i].country + "," + data[i].year);
             title.append(txtnode)
+            var img = document.createElement("img");
+            img.setAttribute("src", "./images/" + data[i].country + ".png");
+            img.classList += " img ml-4"
+            title.append(img);
             this.targettxt.append(title);
             var para = document.createElement("P");
             var txtnode2 = document.createTextNode("you can check brief for " + data[i].country + " olympics at the following ");
             var link = document.createElement("a");
             link.setAttribute("href", data[i].link + data[i].year + "_Summer_Olympics");
+            link.setAttribute("target", "_blank");
             link.innerHTML = "link";
             para.append(txtnode2);
             para.append(link);
