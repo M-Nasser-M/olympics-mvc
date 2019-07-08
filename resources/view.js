@@ -15,6 +15,7 @@ olympicView.prototype.render = function render(year, data) {
 
         if (data[i].year == year) {
             var title = document.createElement("h3");
+            title.classList += " my-5"
             var txtnode = document.createTextNode(data[i].country + "," + data[i].year);
             title.append(txtnode)
             this.targettxt.append(title);
@@ -41,7 +42,7 @@ olympicView.prototype.renderBtn = function(mydata) {
     for (let i = 0; i < this.mydata.length; i++) {
         let btn = document.createElement("button")
         btn.innerText = mydata[i].year;
-        btn.classList += " btn btn-primary m-1";
+        btn.classList += " btn btn-primary m-5 ";
         btn.addEventListener("click", this.onClick);
         console.log(this.onClick);
 
