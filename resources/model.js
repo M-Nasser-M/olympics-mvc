@@ -1,6 +1,6 @@
 var olympicModel = function olympicModel() {
 
-
+    this.mydata = null;
 
 }
 
@@ -12,24 +12,17 @@ olympicModel.prototype.init = function(view) {
     request.open('GET', jsonUrl, true);
     request.responseType = 'json';
     request.send();
+    var self = this;
 
     request.onload = function() {
-        var mydata = request.response;
+
+        self.mydata = request.response;
         console.log("json load done");
-        view.init(mydata);
-
+        view.init(self.mydata);
 
 
     }
 
-}
 
-olympicModel.prototype.getobject = function(year) {
-
-    for (let i = 0; i < this.mydata.length; i++) {
-        if (this.mydata[i].year == year) {
-            return (this.mydata[i]);
-        }
-    }
 
 }

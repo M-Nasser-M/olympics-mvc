@@ -18,6 +18,7 @@ olympicController.prototype.init = function() {
 
 olympicController.prototype.onClick = function(e) {
 
-    this.view.render(e.target.innerHTML);
+
+    this.view.render(e.target.innerHTML, this.model.mydata);
 
 }
