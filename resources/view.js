@@ -5,6 +5,18 @@ var olympicView = function olympicView(targetbtn, targettxt) {
 
 }
 
+olympicView.prototype.init = function(mydata) {
+
+
+    this.mydata = mydata;
+    console.log(this.mydata);
+
+    this.renderBtn(mydata);
+
+
+
+}
+
 
 olympicView.prototype.render = function render(year, data) {
 
@@ -54,16 +66,5 @@ olympicView.prototype.renderBtn = function(mydata) {
         this.targetbtn.appendChild(btn);
 
     }
-
-}
-
-olympicView.prototype.init = function(mydata) {
-
-
-    this.mydata = mydata;
-
-    this.renderBtn(mydata);
-
-
 
 }

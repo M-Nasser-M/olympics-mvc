@@ -18,10 +18,11 @@ olympicModel.prototype.init = function(view) {
 
         self.mydata = request.response;
         console.log("json load done");
-        view.init(self.mydata);
+
 
 
     }
+
 
 
 

@@ -8,7 +8,13 @@ var olympicController = function olympicController(model, view) {
 olympicController.prototype.init = function() {
 
 
-    this.model.init(this.view);
+    this.model.init();
+
+    setTimeout(function() {
+
+        this.view.init(this.model.mydata);
+    }, 1000);
+
 
     this.view.onClick = this.onClick.bind(this);
 
@@ -18,7 +24,7 @@ olympicController.prototype.init = function() {
 
 olympicController.prototype.onClick = function(e) {
 
-
+    console.log(this.model);
     this.view.render(e.target.innerHTML, this.model.mydata);
 
 }
