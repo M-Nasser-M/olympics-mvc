@@ -4,7 +4,7 @@ var olympicModel = function olympicModel() {
 
 }
 
-olympicModel.prototype.init = function(view) {
+olympicModel.prototype.init = function() {
 
 
     var jsonUrl = 'https://api.myjson.com/bins/dxbgz';

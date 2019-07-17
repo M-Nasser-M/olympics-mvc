@@ -9,7 +9,7 @@ olympicView.prototype.init = function(mydata) {
 
 
     this.mydata = mydata;
-    console.log(this.mydata);
+
 
     this.renderBtn(mydata);
 
