@@ -8,12 +8,8 @@ var olympicController = function olympicController(model, view) {
 olympicController.prototype.init = function() {
 
 
-    this.model.init();
+    this.model.init().then(() => { this.view.init(this.model.mydata) });
 
-    setTimeout(function() {
-
-        this.view.init(this.model.mydata);
-    }, 1000);
 
 
     this.view.onClick = this.onClick.bind(this);

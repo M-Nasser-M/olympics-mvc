@@ -9,19 +9,27 @@ olympicModel.prototype.init = function() {
 
     var jsonUrl = 'https://api.myjson.com/bins/dxbgz';
     var request = new XMLHttpRequest();
-    request.open('GET', jsonUrl, true);
+    request.open('GET', jsonUrl);
     request.responseType = 'json';
     request.send();
     var self = this;
 
-    request.onload = function() {
-
-        self.mydata = request.response;
-        console.log("json load done");
+    return new Promise((resolve, reject) => {
+        request.onload = function() {
 
 
+            self.mydata = request.response;
+            console.log("json load done");
+            resolve(request);
 
-    }
+
+
+        }
+    });
+
+
+
+
 
 
 

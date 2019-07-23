@@ -8,7 +8,7 @@ var olympicView = function olympicView(targetbtn, targettxt) {
 olympicView.prototype.init = function(mydata) {
 
 
-    this.mydata = mydata;
+
 
 
     this.renderBtn(mydata);
@@ -18,7 +18,7 @@ olympicView.prototype.init = function(mydata) {
 }
 
 
-olympicView.prototype.render = function render(year, data) {
+olympicView.prototype.render = function(year, data) {
 
 
     this.targettxt.innerHTML = " ";
@@ -31,7 +31,7 @@ olympicView.prototype.render = function render(year, data) {
             var txtnode = document.createTextNode(data[i].country + "," + data[i].year);
             title.append(txtnode)
             var img = document.createElement("img");
-            img.setAttribute("src", "./images/" + data[i].country + ".png");
+            img.setAttribute("src", "./images/" + data[i].country.toLowerCase() + ".png");
             img.classList += " img ml-4"
             title.append(img);
             this.targettxt.append(title);
@@ -56,7 +56,7 @@ olympicView.prototype.render = function render(year, data) {
 olympicView.prototype.renderBtn = function(mydata) {
 
 
-    for (let i = 0; i < this.mydata.length; i++) {
+    for (let i = 0; i < mydata.length; i++) {
         let btn = document.createElement("button")
         btn.innerText = mydata[i].year;
         btn.classList += " btn btn-primary mx-2 my-2 ";
