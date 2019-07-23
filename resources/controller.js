@@ -8,7 +8,7 @@ var olympicController = function olympicController(model, view) {
 olympicController.prototype.init = function() {
 
 
-    this.model.init().then(() => { this.view.init(this.model.mydata) });
+    this.model.init().then(() => { this.view.init(this.model.mydata) }).catch((x) => { console.log(x) });
 
 
 
