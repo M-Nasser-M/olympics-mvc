@@ -28,7 +28,7 @@ olympicModel.prototype.init = function() {
 
         request.onerror = function() {
 
-            console.log("an error has occured");
+
             reject(request);
 
         }

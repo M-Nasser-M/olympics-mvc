@@ -5,10 +5,11 @@ var olympicController = function olympicController(model, view) {
 
 }
 
-olympicController.prototype.init = function() {
+olympicController.prototype.init = async function() {
 
 
-    this.model.init().then(() => { this.view.init(this.model.mydata) }).catch((x) => { console.log(x) });
+    await this.model.init().catch(x => console.error("an error occured" + x));
+    this.view.init(this.model.mydata);
 
 
 
